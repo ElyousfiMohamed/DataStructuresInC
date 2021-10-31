@@ -1,0 +1,56 @@
+#include <stdio.h>
+typedef struct element{
+int data;
+struct element *next;
+}Element;
+int main()
+{
+int T[5]; T[0]=7;T[1]=4;T[2]=3;T[3]=2;T[4]=1;
+Element *L;
+int i;
+Element *e1,*e2,*e3,*e4,*e5;
+/*Etape 1: création des éléments*/
+e1=(Element*)malloc(sizeof(Element));
+e1->data=7;
+
+printf("Adresse 1:%p",e1);
+
+e2=(Element*)malloc(sizeof(Element));
+printf("\nAdresse 2:%p",e2);
+e2->data=4;
+
+e3=(Element*)malloc(sizeof(Element));
+printf("\nAdresse 3:%p",e3);
+e3->data=3;
+
+e4=(Element*)malloc(sizeof(Element));
+printf("\nAdresse 4:%p",e4);
+e4->data=2;
+
+e5=(Element*)malloc(sizeof(Element));
+printf("\nAdresse 5:%p",e5);
+e5->data=1;
+
+/*Etape 2: enchainement*/
+L=e1;
+e1->next=e2;
+e2->next=e3;
+e3->next=e4;
+e4->next=e5;
+/*e5->next=NULL;*/
+
+/*affichage de tableau*/
+printf("\nAffichage Tableau----\n");
+for(i=0;i<5;i++){
+    printf("%d - ",T[i]);
+}
+printf("\nDerniere val de i:%d\n",i);
+Element *temp;
+printf("\nAffichage Liste----\n");
+for(temp=L;temp!=NULL;temp=temp->next){
+    printf("%d - ",temp->data);
+}
+printf("\nDerniere val de temp:%p\n",temp);
+
+return 0;
+}
