@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1623769460 source:d:\projet freecell\freecell\main.c
+	<stdio.h>
+	<stdlib.h>
+
